@@ -1,0 +1,14 @@
+name: May24FASter
+services:
+  - name: web
+    type: web
+    ports:
+      - port: 80
+        protocol: http
+    build:
+      commands:
+        - apt-get update && apt-get install -y python3 python3-pip
+        - python3 -m pip install --upgrade pip
+        - python3 -m pip install -r requirements.txt
+    run:
+      command: python3 May24FASter.py
