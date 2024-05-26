@@ -11,4 +11,4 @@ services:
         - python3 -m pip install --upgrade pip
         - python3 -m pip install -r requirements.txt
     run:
-      command: python3 May24FASter.py
+      command: gunicorn May24FASter:app --bind 0.0.0.0:80
