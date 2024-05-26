@@ -3,7 +3,7 @@ services:
   - name: web
     type: web
     ports:
-      - port: 80
+      - port: 5000
         protocol: http
     build:
       commands:
@@ -11,4 +11,4 @@ services:
         - python3 -m pip install --upgrade pip
         - python3 -m pip install -r requirements.txt
     run:
-      command: gunicorn May24FASter:app --bind 0.0.0.0:80
+      command: gunicorn May24FASter:app --bind 0.0.0.0:5000
